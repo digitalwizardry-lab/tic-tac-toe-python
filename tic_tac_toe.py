@@ -24,18 +24,21 @@ def clear_screen():
 
 def display_board(board, player, turn):
     size = len(board)
-    vspacer = ' ' + VERTICAL_LINE + ' '
-    hspacer = HORIZONTAL_LINE * 3
+    max_cell_width = len(str(size * size))
+    hspacer = HORIZONTAL_LINE * (max_cell_width + 2)
+
+    def format_cell(cell):
+        return cell.center(max_cell_width)
 
     # Clear the screen before displaying the board
     clear_screen()
-    
+
     # Print turn and player
     print(f"Turn {turn}, Player {player}")
-    
+
     # Print the top border
     print(LEFT_TOP_CORNER + hspacer + (TOP_T_INTERSECTION + hspacer) * (size - 1) + RIGHT_TOP_CORNER)
-    
+
     for i in range(size * 2 - 1):
         if i % 2:
             # Print the horizontal separators
@@ -43,8 +46,8 @@ def display_board(board, player, turn):
         else:
             # Print the board cells
             line = board[i // 2]
-            print(VERTICAL_LINE + ' ' + vspacer.join(line) + ' ' + VERTICAL_LINE)
-    
+            print(VERTICAL_LINE + ' ' + (' ' + VERTICAL_LINE + ' ').join(format_cell(cell) for cell in line) + ' ' + VERTICAL_LINE)
+
     # Print the bottom border
     print(LEFT_BOTTOM_CORNER + hspacer + (BOTTOM_T_INTERSECTION + hspacer) * (size - 1) + RIGHT_BOTTOM_CORNER)
 
@@ -77,7 +80,7 @@ def make_move(board, position, player):
         board[row][col] = player
         return True
     else:
-        print("Invalid move, try again.")   # redundant checking
+        print("Invalid move, try again.")
         return False
 
 def check_winner(board):
@@ -95,7 +98,7 @@ def check_winner(board):
     
     for line in lines:
         if len(set(line)) == 1:
-            return line[0] 
+            return line[0]
         
     return None
 
@@ -104,7 +107,8 @@ def is_draw(board):
 
 def main_game():
     # Initialize the game
-    board = initialize_board()
+    size = int(input("Enter the size of the board (e.g., 3 for a 3x3 board): "))
+    board = initialize_board(size)
     turn = 1
     player = 'X'
 
@@ -129,4 +133,3 @@ def main_game():
 
 if __name__ == '__main__':
     main_game()
-
