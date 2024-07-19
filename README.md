@@ -1,58 +1,66 @@
-# Tic-Tac-Toe Game
+# Tic-Tac-Toe Python
 
-A simple console-based implementation of the classic Tic-Tac-Toe game in Python. The game supports a dynamic board size and uses Unicode characters to display the board in a visually appealing way.
+A simple Tic-Tac-Toe game implemented in Python, supporting dynamic board sizes and featuring a clear console-based interface.
 
 ## Features
 
-- Dynamic board size (default is 3x3)
-- Clear screen before each move for a clean display
-- Smart input handling to ensure valid moves
-- Check for winner or draw after each move
-- Neat display using Unicode characters
+- Supports different board sizes (e.g., 3x3, 4x4, 5x5, etc.)
+- Clear and centered console display
+- Dynamic cell width calculation for proper alignment
+- Move validation to ensure valid moves
+- Checks for win conditions and draw
+- Clear screen before displaying the board for better user experience
 
-## Requirements
+## How to Play
 
-- Python 3.x
-
-## How to Run
-
-1. Clone the repository:
+1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/tic-tac-toe-python.git
-    ```
-2. Navigate to the project directory:
-    ```bash
+    git clone https://github.com/digitalwizardry-lab/tic-tac-toe-python.git
     cd tic-tac-toe-python
     ```
-3. Run the game:
+
+2. **Run the Game**:
     ```bash
     python tic_tac_toe.py
     ```
 
-## How to Play
+3. **Instructions**:
+    - At the start, you will be prompted to enter the board size.
+    - Players take turns entering their moves by specifying the cell number.
+    - The game checks for a win or draw after each move.
+    - The game ends when a player wins or when the board is full (draw).
 
-1. The game starts with an empty board.
-2. Players take turns to enter their move.
-3. Enter the number corresponding to the cell where you want to place your mark (X or O).
-4. The game will display the updated board after each move.
-5. The game ends when a player wins or the board is full (draw).
+## Example Game Play
 
-## Example
+```
+Enter the board size (e.g., 3 for a 3x3 board): 3
 
-```txt
-Turn 3, Player X
+Turn 1, Player X
 ┏━━━┳━━━┳━━━┓
-┃ 1 ┃ 2 ┃ O ┃
+┃ 1 ┃ 2 ┃ 3 ┃
+┣━━━╋━━━╋━━━┫
+┃ 4 ┃ 5 ┃ 6 ┃
+┣━━━╋━━━╋━━━┫
+┃ 7 ┃ 8 ┃ 9 ┃
+┗━━━┻━━━┻━━━┛
+
+Enter your move (1-9): 5
+
+Turn 2, Player O
+┏━━━┳━━━┳━━━┓
+┃ 1 ┃ 2 ┃ 3 ┃
 ┣━━━╋━━━╋━━━┫
 ┃ 4 ┃ X ┃ 6 ┃
 ┣━━━╋━━━╋━━━┫
 ┃ 7 ┃ 8 ┃ 9 ┃
 ┗━━━┻━━━┻━━━┛
-Enter your move (1-9):
+
+Enter your move (1-9): ...
 ```
+
 
 ## Author
 
 - [DigitalWizardry](https://github.com/digitalwizardry-lab)
 
-Feel free to contribute to this project by opening issues or submitting pull requests.
+Contributions are welcome! Feel free to open issues or submit pull requests.
